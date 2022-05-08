@@ -2,7 +2,9 @@ name: test_dispatcher_filters
 on: [push]
 jobs:
   test_dispatcher_filters:
-    runs-on: alpine:latest
+    container:
+      image: alpine:latest
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - run: apk add apache2
